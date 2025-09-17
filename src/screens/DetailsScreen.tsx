@@ -17,7 +17,7 @@ interface Props {
 }
 
 export const DetailsScreen: React.FC<Props> = ({ route }) => {
-  const { pokemon } = undefined;
+  const { pokemon } = route.params;
 
   return (
     <ScrollView style={styles.container}>

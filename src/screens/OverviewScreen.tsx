@@ -27,7 +27,10 @@ export const OverviewScreen: React.FC<Props> = ({ navigation, route }) => {
   const { pokemon } = route.params;
 
   const renderPokemonItem = ({ item }: { item: Pokemon }) => (
-    <TouchableOpacity style={styles.pokemonCard}>
+    <TouchableOpacity
+      style={styles.pokemonCard}
+      onPress={() => navigation.push('Details', { pokemon: item })}
+    >
       <Image
         source={{ uri: item.sprites.front_default }}
         style={styles.pokemonImage}
