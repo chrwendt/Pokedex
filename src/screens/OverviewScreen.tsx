@@ -24,7 +24,7 @@ interface Props {
 }
 
 export const OverviewScreen: React.FC<Props> = ({ navigation, route }) => {
-  // TODO: Show all Pokémon in the Pokédex
+  const { pokemon } = route.params;
 
   const renderPokemonItem = ({ item }: { item: Pokemon }) => (
     <TouchableOpacity style={styles.pokemonCard}>
@@ -60,9 +60,9 @@ export const OverviewScreen: React.FC<Props> = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Pokedex</Text>
-      <Text style={styles.subtitle}>{0} Pokémon found</Text>
+      <Text style={styles.subtitle}>{pokemon.length} Pokémon found</Text>
       <FlatList
-        data={[]}
+        data={pokemon}
         renderItem={renderPokemonItem}
         keyExtractor={item => item.id.toString()}
         contentContainerStyle={styles.listContainer}
