@@ -56,7 +56,6 @@ export const OverviewScreen: React.FC<Props> = ({ navigation, route }) => {
     </TouchableOpacity>
   );
 
-  // TODO: Caution, Trainer! Wild UI elements may appear at the screen’s edge!
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Pokedex</Text>

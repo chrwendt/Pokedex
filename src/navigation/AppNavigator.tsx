@@ -22,7 +22,6 @@ export const AppNavigator: React.FC = () => {
             fontWeight: 'bold',
             fontSize: 20,
           },
-          headerStatusBarHeight: 0,
           animation: 'slide_from_right',
         }}
       >
