@@ -20,9 +20,13 @@ export const LoadingScreen: React.FC<Props> = ({ navigation }) => {
     try {
       setLoadingText('Connecting to PokeAPI...');
 
-      // TODO: Catch em all and teleport trainer to overview screen
+      const pokemon = await PokemonService.getFirstPokemonWithDetails(20);
 
       setLoadingText('Pokémon loaded!');
+
+      setTimeout(() => {
+        navigation.replace('Overview', { pokemon });
+      }, 500);
     } catch (error) {
       console.error('Error loading Pokémon:', error);
 
